@@ -2,12 +2,9 @@ package gr.haec.fullstack.VisitCrete.Services;
 
 import gr.haec.fullstack.VisitCrete.Entities.TourPackage;
 import gr.haec.fullstack.VisitCrete.Repositories.TourPackageRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TourPackageServiceImpl implements TourPackageService {
@@ -36,6 +33,11 @@ public class TourPackageServiceImpl implements TourPackageService {
     public TourPackage findByTourPackageId(Long tourPackageid) {
         return tourPackageRepository.findByTourPackageid(tourPackageid);
     }
+
+    //@Override
+    //public List<TourPackage> findAllByRatings(String score) {
+      //  return tourPackageRepository.findAllByRatings(score);
+    //}
 
 
 
