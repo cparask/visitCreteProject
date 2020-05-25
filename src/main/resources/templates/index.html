@@ -1,0 +1,126 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
+      layout:decorate="~{layout}" with:title="'Welcome to our page'">
+<th:block layout:fragment="content">
+    <div class="tm-page-wrap mx-auto">
+        <section class="tm-banner">
+            <div class="tm-container-outer tm-banner-bg">
+                <div class="container">
+
+                    <div class="row tm-banner-row tm-banner-row-header">
+                        <div class="col-xs-12">
+                            <div class="tm-banner-header">
+                                <h1 class="text-uppercase tm-banner-title">Let's begin</h1>
+                                <img th:src="@{/img/dots-3.png}" alt="Dots">
+                                <p class="tm-banner-subtitle">We assist you to choose the best.</p>
+                                <a href="javascript:void(0)" class="tm-down-arrow-link"><i class="fa fa-2x fa-angle-down tm-down-arrow"></i></a>
+                            </div>
+                        </div>  <!-- col-xs-12 -->
+                    </div> <!-- row -->
+
+                    <div class="tm-banner-overlay"></div>
+                </div>  <!-- .container -->
+            </div>     <!-- .tm-container-outer -->
+        </section>
+
+        <section class="p-5 tm-container-outer tm-bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 mx-auto tm-about-text-wrap text-center">
+                        <h2 class="text-uppercase mb-4">Your <strong>Journey</strong> is our priority</h2>
+                        <p class="mb-4">Nullam auctor, sapien sit amet lacinia euismod, lorem magna lobortis massa, in tincidunt mi metus quis lectus. Duis nec lobortis velit. Vivamus id magna vulputate, tempor ante eget, tempus augue. Maecenas ultricies neque magna.</p>
+                        <a href="#" class="text-uppercase btn-primary tm-btn">Continue explore</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="tm-container-outer" id="tm-section-2">
+            <section class="tm-slideshow-section">
+                <div class="tm-slideshow">
+                    <img th:src="@{/img/Heraclion_1.png}" alt="Image">
+                    <img th:src="@{/img/Knossos.png}" alt="Image">
+                    <img th:src="@{/img/beach2.jpeg}" alt="Image">
+                </div>
+                <div class="tm-slideshow-description tm-bg-primary">
+                    <h2 class="">Heraclion's most visited places</h2>
+                    <p>Visi Heraclion -- the birth place of the Ancient Minoans</p>
+                    <a href="#" class="text-uppercase tm-btn tm-btn-white tm-btn-white-primary">Continue Reading</a>
+                </div>
+            </section>
+            <section class="clearfix tm-slideshow-section tm-slideshow-section-reverse">
+
+                <div class="tm-right tm-slideshow tm-slideshow-highlight">
+                    <img th:src="@{/img/tm-img-02.jpg}" alt="Image">
+                    <img th:src="@{/img/tm-img-03.jpg}" alt="Image">
+                    <img th:src="@{/img/tm-img-01.jpg}" alt="Image">
+                </div>
+
+                <div class="tm-slideshow-description tm-slideshow-description-left tm-bg-highlight">
+                    <h2 class="">Chania's most popular places</h2>
+                    <p>Walk at the famous port and swim in the tropical beaches</p>
+                    <a href="#" class="text-uppercase tm-btn tm-btn-white tm-btn-white-highlight">Continue Reading</a>
+                </div>
+
+            </section>
+            <section class="tm-slideshow-section">
+                <div class="tm-slideshow">
+                    <img th:src="@{/img/tm-img-01.jpg}" alt="Image">
+                    <img th:src="@{/img/tm-img-02.jpg}" alt="Image">
+                    <img th:src="@{/img/tm-img-03.jpg}" alt="Image">
+                </div>
+                <div class="tm-slideshow-description tm-bg-primary">
+                    <h2 class="">Rethymno's most visited places</h2>
+                    <p>Sea and mountain combination</p>
+                    <a href="#" class="text-uppercase tm-btn tm-btn-white tm-btn-white-primary">Continue Reading</a>
+                </div>
+            </section>
+            <section class="clearfix tm-slideshow-section tm-slideshow-section-reverse">
+
+                <div class="tm-right tm-slideshow tm-slideshow-highlight">
+                    <img th:src="@{/img/tm-img-02.jpg}" alt="Image">
+                    <img th:src="@{/img/tm-img-03.jpg}" alt="Image">
+                    <img th:src="@{/img/tm-img-01.jpg}" alt="Image">
+                </div>
+
+                <div class="tm-slideshow-description tm-slideshow-description-left tm-bg-highlight">
+                    <h2 class="">Lasithi's most popular places</h2>
+                    <p>Visit the coconut tree forest in Vai and swim in the tropical waters of Chrysi island</p>
+                    <a href="#" class="text-uppercase tm-btn tm-btn-white tm-btn-white-highlight">Continue Reading</a>
+                </div>
+
+            </section>
+                </div>
+        <div class="tm-container-outer" id="tm-section-3">
+            <ul class="nav nav-pills tm-tabs-links">
+                <li class="tm-tab-link-li">
+                    <a href="#1a" data-toggle="tab" class="tm-tab-link">
+                        <img th:src="@{/img/Heraclion.jpg}" alt="Image" class="img-fluid">
+                        Municipality of Heraclion
+                    </a>
+                </li>
+                <li class="tm-tab-link-li">
+                    <a href="#2a" data-toggle="tab" class="tm-tab-link">
+                        <img th:src="@{/img/Chania.jpg}" alt="Image" class="img-fluid">
+                        Municipality of Chania
+                    </a>
+                </li>
+                <li class="tm-tab-link-li">
+                    <a href="#3a" data-toggle="tab" class="tm-tab-link">
+                        <img th:src="@{/img/Rethymno.jpg}" alt="Image" class="img-fluid">
+                        Municipality of Rethymno
+                    </a>
+                </li>
+                <li class="tm-tab-link-li">
+                    <a href="#4a" data-toggle="tab" class="tm-tab-link active"><!-- Current Active Tab -->
+                        <img th:src="@{/img/Lasithi.jpg}" alt="Image" class="img-fluid">
+                        Municipality of Lasithi
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content clearfix">
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>
