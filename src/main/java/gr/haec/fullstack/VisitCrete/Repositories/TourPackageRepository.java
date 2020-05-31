@@ -16,7 +16,7 @@ public interface TourPackageRepository extends JpaRepository<TourPackage, Long> 
 
     List < TourPackage > findAll();
     TourPackage findByTourPackageid(Long tourPackageid);
-    //List<TourPackage> findAllByRatings(String score );
+    List<TourPackage> findAllByRatings(String score );
 
 
 

@@ -4,7 +4,9 @@ import gr.haec.fullstack.VisitCrete.Entities.Person;
 import gr.haec.fullstack.VisitCrete.Entities.TourPackage;
 import gr.haec.fullstack.VisitCrete.Services.TourPackageService;
 import gr.haec.fullstack.VisitCrete.Services.TourPackageServiceImpl;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,23 +22,19 @@ public class TourPackageRestController {
         this.tourPackageService = tourPackageService;
     }
 
-    @RequestMapping(value = "/rest/tour-packages/list", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody
-    List<TourPackage> getTourPackagesList() {
+    @GetMapping(path = "rest/tour-packages/list")
+    public List<TourPackage> getAllTourPackages() {
         List<TourPackage> allTourPackages = tourPackageService.findAll();
+
         return allTourPackages;
-    }
-
-
-    // βγάζει Null pointer exception
-    @RequestMapping(value = "/rest/tour-packages/list/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody
-    TourPackage getTourPackageById(@PathVariable Long tourPackageid) {
-
-        TourPackage singleTourPackage = tourPackageService.findByTourPackageId(tourPackageid);
-        return singleTourPackage;
 
     }
+
+    @GetMapping (path = "rest/tour-packages/{id}")
+    public ResponseEntity getTourPackage (@PathVariable long tourPackageid) {
+        return new ResponseEntity(tourPackageService.findByTourPackageId(tourPackageid), HttpStatus.OK);
+    }
+
 
     @PostMapping("/rest/create-tour-package")
     public TourPackage createTourPackage(@RequestBody TourPackage tourPackage) {
@@ -51,13 +49,11 @@ public class TourPackageRestController {
     }
 
 
+    @GetMapping (path="rest/tour-package/{score}")
+    public List<TourPackage> getAllByRating(@PathVariable String score) {
+        List<TourPackage> tourPackageByRating = tourPackageService.findAllByRatings(score);
+        return tourPackageByRating;
 
-    //@RequestMapping(value = "/rest/tour-packages/list/score/{rating}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    //public @ResponseBody
-    //List<TourPackage> getTourPackageByScore(@PathVariable String score) {
+    }
 
-      //  List<TourPackage> TourPackagesByScore = tourPackageService.findAllByRatings(score);
-        //return TourPackagesByScore;
-
-    //}
 }

@@ -12,5 +12,7 @@ import java.util.List;
 public interface RatingRepository extends JpaRepository<Rating, Long> {
 
 
+    List<TourPackage> findAllByRatings(String score );
+
 
 }
