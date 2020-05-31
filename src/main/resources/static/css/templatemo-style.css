@@ -76,8 +76,9 @@ p:last-child { margin-bottom: 0; }
 .tm-top-bar.active .navbar-expand-lg .navbar-nav .nav-link { padding: 20px 35px; }
 .tm-top-bar.active .navbar-brand { font-size: 1.4rem; }
 
+/* Logo picture dimensions*/
 .tm-top-bar .navbar-brand img {
-    width: 60px;
+    width: 250px;
     height: auto;
 }
 
@@ -118,7 +119,7 @@ p:last-child { margin-bottom: 0; }
     margin-top: 10px;
     letter-spacing: 1px;
 }
-
+/* Banner dimension and handling*/
 .tm-banner-header { color: white; }
 .tm-banner-overlay {
     z-index: 1;
@@ -128,10 +129,12 @@ p:last-child { margin-bottom: 0; }
     overflow: auto;
     top: 0px;
     left: 0px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0);
 }
+
+
 .tm-banner-bg {
-    background: url(../img/banner.jpg) center top no-repeat;    
+    background: url(../img/bannerCrete.jpg) center top no-repeat;
     min-height: 720px;
     position: relative;
 }
