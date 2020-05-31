@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface RatingService {
 
-    List<TourPackage> findAllByRatings(String score );
+    //List<TourPackage> findAllByRatings(String score );
     
 }

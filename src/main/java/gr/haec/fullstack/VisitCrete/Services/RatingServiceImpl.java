@@ -13,8 +13,8 @@ public class RatingServiceImpl implements RatingService {
     RatingRepository ratingRepository;
 
 
-    @Override
+    /*@Override
     public List<TourPackage> findAllByRatings(String score) {
         return ratingRepository.findAllByRatings(score);
-    }
+    }*/
 }
