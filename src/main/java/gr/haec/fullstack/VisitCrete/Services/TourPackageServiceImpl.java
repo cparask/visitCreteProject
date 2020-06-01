@@ -34,10 +34,10 @@ public class TourPackageServiceImpl implements TourPackageService {
         return tourPackageRepository.findByTourPackageid(tourPackageid);
     }
 
-    //@Override
-    //public List<TourPackage> findAllByRatings(String score) {
-      //  return tourPackageRepository.findAllByRatings(score);
-    //}
+    @Override
+    public List<TourPackage> findAllByRatings(String score) {
+       return tourPackageRepository.findAllByRatings(score);
+    }
 
 
 

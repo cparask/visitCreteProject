@@ -4,8 +4,10 @@ public enum Region {
 
     Heraclion,
     Chania,
-    Rethymno,
-    Lassithi
+    Rethymno ,
+    Lassithi,
+
+
 
 
 }
