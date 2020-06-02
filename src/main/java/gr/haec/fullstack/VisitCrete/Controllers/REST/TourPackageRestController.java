@@ -31,7 +31,7 @@ public class TourPackageRestController {
     }
 
     @GetMapping (path = "rest/tour-packages/{id}")
-    public ResponseEntity getTourPackage (@PathVariable long tourPackageid) {
+    public ResponseEntity getTourPackage (@PathVariable ("id") long tourPackageid) {
         return new ResponseEntity(tourPackageService.findByTourPackageId(tourPackageid), HttpStatus.OK);
     }
 
@@ -44,13 +44,13 @@ public class TourPackageRestController {
     }
 
     @DeleteMapping("/rest/delete-tour-package/{id}")
-    public void deleteTourPackage(@PathVariable long tourPackageid) {
+    public void deleteTourPackage(@PathVariable ("id") long tourPackageid) {
         tourPackageService.delete(tourPackageid);
     }
 
 
-    @GetMapping (path="rest/tour-package/{score}")
-    public List<TourPackage> getAllByRating(@PathVariable String score) {
+    @GetMapping (path="rest/tour-package-rating/{score}")
+    public List<TourPackage> getAllByRating(@PathVariable ("score") String score) {
         List<TourPackage> tourPackageByRating = tourPackageService.findAllByRatings(score);
         return tourPackageByRating;
 

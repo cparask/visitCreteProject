@@ -12,9 +12,13 @@ import java.util.List;
 public class RatingServiceImpl implements RatingService {
     RatingRepository ratingRepository;
 
+    public RatingServiceImpl(RatingRepository ratingRepository) {
+        this.ratingRepository = ratingRepository;
+    }
 
-    /*@Override
-    public List<TourPackage> findAllByRatings(String score) {
-        return ratingRepository.findAllByRatings(score);
-    }*/
+
+    @Override
+    public List<TourPackage> findAllByScore(String score) {
+        return ratingRepository.findAllByScore(score);
+    }
 }

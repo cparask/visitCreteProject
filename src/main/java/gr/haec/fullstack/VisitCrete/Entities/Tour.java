@@ -17,6 +17,7 @@ public class Tour {
     private int duration;
     @Column(length = 200)
     private String keywords;
+    @Enumerated(EnumType.ORDINAL)
     private Region region;
 
     @ManyToOne

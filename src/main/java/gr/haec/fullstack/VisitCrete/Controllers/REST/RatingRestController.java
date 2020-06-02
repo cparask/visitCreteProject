@@ -18,10 +18,10 @@ public class RatingRestController {
     }
 
 
-    /* @GetMapping (path = "rest/tour-package/rating/{score}")
-    List<TourPackage> getTourPackageByRating (@PathVariable String score) {
-        List<TourPackage> tourPackageByRating = ratingService.findAllByRatings(score);
+    @GetMapping (path = "rest/tour-package/rating/{score}")
+    List<TourPackage> getTourPackageByRating (@PathVariable ("score") String score) {
+        List<TourPackage> tourPackageByRating = ratingService.findAllByScore(score);
         return tourPackageByRating;
-    }*/
+    }
 
 }

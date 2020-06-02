@@ -22,13 +22,6 @@ public class TourRestController {
     public TourRestController(TourService tourService) {
         this.tourService = tourService;
     }
-// Null pointer exception
-    /*@RequestMapping(value = "/rest/tours/list", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody
-    List<Tour> getTourList() {
-        List<Tour> allTours = tourService.findAll();
-        return allTours;
-    }*/
 
     @GetMapping (path = "rest/tours/list")
     public List<Tour> getAllTours () {
@@ -38,12 +31,16 @@ public class TourRestController {
 
     @RequestMapping(value = "/rest/tours/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
-    Tour getTourById(@PathVariable Long id) {
+    Tour getTourById(@PathVariable ("id") Long id) {
         Tour oneTour = tourService.getTourById(id);
         return oneTour;
     }
 
-
+@GetMapping (path ="rest/tours/{tourPackageName}")
+    public List<Tour> getToursByTourPackageName (@PathVariable ("tourPackageName") String name ) {
+        List<Tour> toursByTourPackageName = tourService.findByTourPackageName(name);
+        return toursByTourPackageName;
+}
 
     }
 

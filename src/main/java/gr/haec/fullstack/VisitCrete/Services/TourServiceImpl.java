@@ -12,6 +12,10 @@ import java.util.Optional;
 public class TourServiceImpl implements TourService {
     TourRepository tourRepository;
 
+    public TourServiceImpl(TourRepository tourRepository) {
+        this.tourRepository = tourRepository;
+    }
+
 
     @Override
     public List<Tour> findByTitle(String title) {
